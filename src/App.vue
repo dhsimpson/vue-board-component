@@ -1,27 +1,49 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <board :boardList="boardList" :columnList="columnList"/>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import Board from './components/Board.vue';
+import boardList from '@/assets/boardList.json';
 
 export default defineComponent({
   name: 'App',
-  components: {
-    HelloWorld
+  components: {Board},
+  data() {
+      const columnList = [
+          {
+              param: 'content_id',
+              name: '번호'
+          },
+          {
+              param: 'content_title',
+              name: '제목'
+          },
+          {
+              param: 'content_author',
+              name: '작성자'
+          },
+          {
+              param: 'view_count',
+              name: '조회수'
+          },
+          {
+              param: 'like_count',
+              name: '좋아요수'
+          },
+          {
+              param: 'comment_count',
+              name: '댓글수'
+          },
+      ];
+      return {
+          boardList,
+          columnList
+        }
   }
 })
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
