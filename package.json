@@ -1,7 +1,6 @@
 {
   "name": "vue-board-component",
   "version": "0.1.0",
-  "private": true,
   "author": "dhsimpson <qeadzc9503@naver.com>",
   "license": "MIT",
   "repository": {
