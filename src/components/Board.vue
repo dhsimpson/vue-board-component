@@ -23,7 +23,6 @@ interface Col {
 export default defineComponent({
   name: 'boardComponent',
   props: {
-    msg: String,
     boardList: Array,
     columnList: Array,
     boardHead: String,
