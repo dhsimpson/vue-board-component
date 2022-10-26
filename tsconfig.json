@@ -40,8 +40,5 @@
   ],
   "exclude": [
     "node_modules"
-  ],
-  "filese": [
-      "src/index.d.ts"
   ]
 }
