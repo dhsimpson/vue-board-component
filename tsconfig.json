@@ -1,8 +1,5 @@
 {
   "compilerOptions": {
-    "typeRoots": ["./types"],
-    "declaration": true,
-    "declarationDir": "./types",
     "resolveJsonModule": true,
     "target": "esnext",
     "module": "esnext",
