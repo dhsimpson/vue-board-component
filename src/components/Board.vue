@@ -1,16 +1,16 @@
 <template>
-    <li class="board-head">
-        <div v-for="(data, idx) in columnList" :key="idx">
-            {{data.name}}
-        </div>
-    </li>
-    <ol>
-        <li v-for="(data, idx) in boardList" :key="idx">
-            <div v-for="(col, col_idx) in columnList" :key="col_idx">
+    <section>
+        <header :class="boardHead">
+            <div class="col" :style="{'max-width': data.maxWidth}" v-for="(data, idx) in columnList" :key="idx">
+                {{data.name}}
+            </div>
+        </header>
+        <div :class="['row', boardRow]" v-for="(data, idx) in boardList" :key="idx">
+            <div class="col" :style="{'max-width': col.maxWidth}" v-for="(col, col_idx) in columnList" :key="col_idx">
                 {{selectParam(data, col)}}
             </div>
-        </li>
-    </ol>
+        </div>
+    </section>
 </template>
 
 <script lang="ts">
@@ -25,13 +25,15 @@ export default defineComponent({
   props: {
     msg: String,
     boardList: Array,
-    columnList: Array
+    columnList: Array,
+    boardHead: String,
+    boardRow: String
   },
   methods: {
       selectParam(data: any, col: Col): String {
           const param = col['param'];
           let res: String = '';
-          Object.keys(data).find(key => {if(param ==key) res = data[key]})
+          Object.keys(data).find(key => {if(param ==key) res = data[key]});
           return res;
       }
   }
@@ -39,10 +41,19 @@ export default defineComponent({
 </script>
 
 <style scoped>
-li {
-    display: flex;
+section {
+    display: table;
+    width: 100%;
 }
-ol li {
-    list-style: none;
+
+section > * {
+    display: table-row;
+}
+
+section .col {
+    display: table-cell;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 </style>

@@ -1,5 +1,7 @@
 <template>
-    <board :boardList="boardList" :columnList="columnList"/>
+    <div class="board-wrapper">
+        <board :boardHead="'board-head'" :boardRow="'board-row'" :boardList="boardList" :columnList="columnList"/>
+    </div>
 </template>
 
 <script lang="ts">
@@ -14,27 +16,33 @@ export default defineComponent({
       const columnList = [
           {
               param: 'content_id',
-              name: '번호'
+              name: '번호',
+              maxWidth: '100px'
           },
           {
               param: 'content_title',
-              name: '제목'
+              name: '제목',
+              maxWidth: '100px'
           },
           {
               param: 'content_author',
-              name: '작성자'
+              name: '작성자',
+              maxWidth: '100px'
           },
           {
               param: 'view_count',
-              name: '조회수'
+              name: '조회수',
+              maxWidth: '100px'
           },
           {
               param: 'like_count',
-              name: '좋아요수'
+              name: '좋아요수',
+              maxWidth: '100px'
           },
           {
               param: 'comment_count',
-              name: '댓글수'
+              name: '댓글수',
+              maxWidth: '100px'
           },
       ];
       return {
@@ -46,4 +54,13 @@ export default defineComponent({
 </script>
 
 <style>
+.board-wrapper {
+    width: 200px;
+}
+.board-head {
+    background-color: blue;
+}
+.board-row {
+    background-color: gray;
+}
 </style>
