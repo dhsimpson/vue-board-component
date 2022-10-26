@@ -1,12 +1,12 @@
 <template>
     <section>
-        <header :class="boardHead">
-            <div class="col" :style="{'max-width': data.maxWidth}" v-for="(data, idx) in columnList" :key="idx">
+        <header :class="[boardHead]">
+            <div :class="['col', headerCol]" :style="{'max-width': data.maxWidth}" v-for="(data, idx) in columnList" :key="idx">
                 {{data.name}}
             </div>
         </header>
         <div :class="['row', boardRow]" v-for="(data, idx) in boardList" :key="idx">
-            <div class="col" :style="{'max-width': col.maxWidth}" v-for="(col, col_idx) in columnList" :key="col_idx">
+            <div :class="['col', rowCol]" :style="{'max-width': col.maxWidth}" v-for="(col, col_idx) in columnList" :key="col_idx">
                 {{selectParam(data, col)}}
             </div>
         </div>
@@ -27,7 +27,9 @@ export default defineComponent({
     boardList: Array,
     columnList: Array,
     boardHead: String,
-    boardRow: String
+    boardRow: String,
+    headerCol: String,
+    rowCol: String,
   },
   methods: {
       selectParam(data: any, col: Col): String {
@@ -44,6 +46,7 @@ export default defineComponent({
 section {
     display: table;
     width: 100%;
+    border-collapse: collapse;
 }
 
 section > * {

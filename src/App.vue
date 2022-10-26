@@ -1,6 +1,12 @@
 <template>
     <div class="board-wrapper">
-        <board :boardHead="'board-head'" :boardRow="'board-row'" :boardList="boardList" :columnList="columnList"/>
+        <board 
+        :boardHead="'board-head'" 
+        :boardRow="'board-row'" 
+        :headerCol="'header-col'" 
+        :rowCol="'row-col'"
+        :boardList="boardList" :columnList="columnList"
+        />
     </div>
 </template>
 
@@ -59,8 +65,16 @@ export default defineComponent({
 }
 .board-head {
     background-color: blue;
+    border: 1px solid black;
 }
 .board-row {
     background-color: gray;
+    border: 1px solid red;
+}
+.header-col {
+    border: 1px solid black;
+}
+.row-col {
+    border-left: 1px solid blue;
 }
 </style>
