@@ -1,6 +1,9 @@
 <template>
     <div class="board-wrapper">
         <board 
+        :boardSection="'board-section'"
+        :comonRow="'common-row'"
+        :commonCol="'common-col'"
         :boardHead="'board-head'" 
         :boardRow="'board-row'" 
         :headerCol="'header-col'" 
@@ -76,5 +79,22 @@ export default defineComponent({
 }
 .row-col {
     border-left: 1px solid blue;
+}
+
+#board-section {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.common-row {
+    display: table-row;
+}
+
+.common-col {
+    display: table-cell;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 </style>

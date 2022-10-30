@@ -1,12 +1,12 @@
 <template>
-    <section id="board-section">
-        <header :class="['row', boardHead]">
-            <div :class="['col', headerCol]" :style="{'max-width': data.maxWidth as string}" v-for="(data, idx) in columnList" :key="idx">
+    <section :id="boardSection">
+        <header :class="[comonRow, boardHead]">
+            <div :class="[commonCol, headerCol]" :style="{'max-width': data.maxWidth as string}" v-for="(data, idx) in columnList" :key="idx">
                 {{data.name}}
             </div>
         </header>
-        <div :class="['row', boardRow]" v-for="(data, idx) in boardList" :key="idx">
-            <div :class="['col', rowCol]" :style="{'max-width': col.maxWidth as string}" v-for="(col, col_idx) in columnList" :key="col_idx">
+        <div :class="[comonRow, boardRow]" v-for="(data, idx) in boardList" :key="idx">
+            <div :class="[commonCol, rowCol]" :style="{'max-width': col.maxWidth as string}" v-for="(col, col_idx) in columnList" :key="col_idx">
                 {{selectParam(data, col)}}
             </div>
         </div>
@@ -23,6 +23,9 @@ export default defineComponent({
   props: {
     boardList: Array,
     columnList: Array as PropType<Array<Col>>,
+    boardSection: String,
+    comonRow: String,
+    commonCol: String,
     boardHead: String,
     boardRow: String,
     headerCol: String,
@@ -36,28 +39,33 @@ export default defineComponent({
           return res;
       }
   },
+  setup() {
+      console.log('hello!!!')
+  },
   mounted() {
-      const boardSection = document.getElementById('board-section') as HTMLElement;
-      {
-          boardSection.style.display = 'table';
-          boardSection.style.width = '100%';
-          boardSection.style.borderCollapse = 'collapse';
-      }
+    //   const boardSection = document.getElementById('board-section') as HTMLElement;
+    //   {
+    //       boardSection.style.display = 'table';
+    //       boardSection.style.width = '100%';
+    //       boardSection.style.borderCollapse = 'collapse';
+    //   }
+    //   console.log('boardSection')
+    //   console.log(boardSection)
 
-      const columnList = Array.from(document.getElementsByClassName('col') as HTMLCollectionOf<HTMLElement>);
+    //   const columnList = Array.from(document.getElementsByClassName('col') as HTMLCollectionOf<HTMLElement>);
     
-      columnList.forEach((col: HTMLElement) => {
-          col.style.display = 'table-cell';
-          col.style.overflow = 'hidden';
-          col.style.textOverflow = 'ellipsis';
-          col.style.whiteSpace = 'nowrap';
-      });
+    //   columnList.forEach((col: HTMLElement) => {
+    //       col.style.display = 'table-cell';
+    //       col.style.overflow = 'hidden';
+    //       col.style.textOverflow = 'ellipsis';
+    //       col.style.whiteSpace = 'nowrap';
+    //   });
 
-      const rowList = Array.from(document.getElementsByClassName('row') as HTMLCollectionOf<HTMLElement>);
+    //   const rowList = Array.from(document.getElementsByClassName('row') as HTMLCollectionOf<HTMLElement>);
     
-      rowList.forEach((row: HTMLElement) => {
-          row.style.display = 'table-row';
-      });
+    //   rowList.forEach((row: HTMLElement) => {
+    //       row.style.display = 'table-row';
+    //   });
   }
 })
 </script>

@@ -1,6 +1,6 @@
 {
   "name": "vue-board-component",
-  "version": "0.2.6-5",
+  "version": "0.2.6-6-1",
   "author": "dhsimpson <qeadzc9503@naver.com>",
   "license": "MIT",
   "repository": {
@@ -10,6 +10,7 @@
   "keywords": ["front-end", "vue-js-modal", "vuejs", "web", "vue", "bulletin-board", "board", "notice-board"],
   "bugs": {"url": "https://github.com/dhsimpson/vue-board-component/issues"},
   "scripts": {
+    "dev": "vite",
     "serve": "vue-cli-service serve",
     "build": "vite build && vue-tsc --emitDeclarationOnly",
     "lint": "vue-cli-service lint"
