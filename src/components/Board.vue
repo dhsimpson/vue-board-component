@@ -1,5 +1,6 @@
 <template>
     <section :id="boardSection">
+    <button>click me</button>
         <header :class="[commonRow, boardHead]">
             <div :class="[commonCol, headerCol]" :style="{'max-width': data.maxWidth as string}" v-for="(data, idx) in columnList" :key="idx">
                 {{data.name}}
