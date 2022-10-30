@@ -1,13 +1,13 @@
 <template>
     <section :id="boardSection">
     <button>click me@@@@</button>
-        <header :class="[commonRow, boardHead]">
-            <div :class="[commonCol, headerCol]" :style="{'max-width': data.maxWidth as string}" v-for="(data, idx) in columnList" :key="idx">
+        <header :class="['row', boardHead]">
+            <div :class="['col', headerCol]" :style="{'max-width': data.maxWidth as string}" v-for="(data, idx) in columnList" :key="idx">
                 {{data.name}}
             </div>
         </header>
-        <div :class="[commonRow, boardRow]" v-for="(data, idx) in boardList" :key="idx">
-            <div :class="[commonCol, rowCol]" :style="{'max-width': col.maxWidth as string}" v-for="(col, col_idx) in columnList" :key="col_idx">
+        <div :class="['row', boardRow]" v-for="(data, idx) in boardList" :key="idx">
+            <div :class="['col', rowCol]" :style="{'max-width': col.maxWidth as string}" v-for="(col, col_idx) in columnList" :key="col_idx">
                 {{selectParam(data, col)}}
             </div>
         </div>

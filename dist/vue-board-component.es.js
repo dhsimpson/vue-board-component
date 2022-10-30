@@ -61,11 +61,11 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("section", { id: _ctx.boardSection }, [
     _hoisted_2,
     createElementVNode("header", {
-      class: normalizeClass([_ctx.commonRow, _ctx.boardHead])
+      class: normalizeClass(["row", _ctx.boardHead])
     }, [
       (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.columnList, (data, idx) => {
         return openBlock(), createElementBlock("div", {
-          class: normalizeClass([_ctx.commonCol, _ctx.headerCol]),
+          class: normalizeClass(["col", _ctx.headerCol]),
           style: normalizeStyle({ "max-width": data.maxWidth }),
           key: idx
         }, toDisplayString(data.name), 7);
@@ -73,12 +73,12 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     ], 2),
     (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.boardList, (data, idx) => {
       return openBlock(), createElementBlock("div", {
-        class: normalizeClass([_ctx.commonRow, _ctx.boardRow]),
+        class: normalizeClass(["row", _ctx.boardRow]),
         key: idx
       }, [
         (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.columnList, (col, col_idx) => {
           return openBlock(), createElementBlock("div", {
-            class: normalizeClass([_ctx.commonCol, _ctx.rowCol]),
+            class: normalizeClass(["col", _ctx.rowCol]),
             style: normalizeStyle({ "max-width": col.maxWidth }),
             key: col_idx
           }, toDisplayString(_ctx.selectParam(data, col)), 7);

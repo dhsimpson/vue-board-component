@@ -2,8 +2,6 @@
     <div class="board-wrapper">
         <board 
         :boardSection="'board-section'"
-        :commonRow="'common-row'"
-        :commonCol="'common-col'"
         :boardHead="'board-head'" 
         :boardRow="'board-row'" 
         :headerCol="'header-col'" 
