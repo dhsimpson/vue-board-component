@@ -1,12 +1,12 @@
 <template>
     <section>
         <header :class="[boardHead]">
-            <div :class="['col', headerCol]" :style="{'max-width': data.maxWidth}" v-for="(data, idx) in columnList" :key="idx">
+            <div :class="['col', headerCol]" :style="{'max-width': data.maxWidth as string}" v-for="(data, idx) in columnList" :key="idx">
                 {{data.name}}
             </div>
         </header>
         <div :class="['row', boardRow]" v-for="(data, idx) in boardList" :key="idx">
-            <div :class="['col', rowCol]" :style="{'max-width': col.maxWidth}" v-for="(col, col_idx) in columnList" :key="col_idx">
+            <div :class="['col', rowCol]" :style="{'max-width': col.maxWidth as string}" v-for="(col, col_idx) in columnList" :key="col_idx">
                 {{selectParam(data, col)}}
             </div>
         </div>
@@ -14,17 +14,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-interface Col {
-    param: String,
-    name: String
-}
+import { defineComponent, PropType } from 'vue'
+import type { CSSProperties } from 'vue'
+import type {Col} from '@/shared/types/Col';
 
 export default defineComponent({
   name: 'boardComponent',
   props: {
     boardList: Array,
-    columnList: Array,
+    columnList: Array as PropType<Array<Col>>,
     boardHead: String,
     boardRow: String,
     headerCol: String,
