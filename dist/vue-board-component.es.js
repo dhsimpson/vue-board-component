@@ -1,5 +1,4 @@
 import { defineComponent, openBlock, createElementBlock, createElementVNode, normalizeClass, Fragment, renderList, normalizeStyle, toDisplayString } from "vue";
-var Board_vue_vue_type_style_index_0_lang = "";
 var _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -35,10 +34,29 @@ const _sfc_main = defineComponent({
     console.log("hello!!!");
   },
   mounted() {
+    const boardSection = document.getElementById("board-section");
+    {
+      boardSection.style.display = "table";
+      boardSection.style.width = "100%";
+      boardSection.style.borderCollapse = "collapse";
+    }
+    console.log("boardSection");
+    console.log(boardSection);
+    const columnList = Array.from(document.getElementsByClassName("col"));
+    columnList.forEach((col) => {
+      col.style.display = "table-cell";
+      col.style.overflow = "hidden";
+      col.style.textOverflow = "ellipsis";
+      col.style.whiteSpace = "nowrap";
+    });
+    const rowList = Array.from(document.getElementsByClassName("row"));
+    rowList.forEach((row) => {
+      row.style.display = "table-row";
+    });
   }
 });
 const _hoisted_1 = ["id"];
-const _hoisted_2 = /* @__PURE__ */ createElementVNode("button", null, "click me", -1);
+const _hoisted_2 = /* @__PURE__ */ createElementVNode("button", null, "click me@@@@", -1);
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("section", { id: _ctx.boardSection }, [
     _hoisted_2,

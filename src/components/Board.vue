@@ -1,6 +1,6 @@
 <template>
     <section :id="boardSection">
-    <button>click me</button>
+    <button>click me@@@@</button>
         <header :class="[commonRow, boardHead]">
             <div :class="[commonCol, headerCol]" :style="{'max-width': data.maxWidth as string}" v-for="(data, idx) in columnList" :key="idx">
                 {{data.name}}
@@ -44,48 +44,29 @@ export default defineComponent({
       console.log('hello!!!')
   },
   mounted() {
-    //   const boardSection = document.getElementById('board-section') as HTMLElement;
-    //   {
-    //       boardSection.style.display = 'table';
-    //       boardSection.style.width = '100%';
-    //       boardSection.style.borderCollapse = 'collapse';
-    //   }
-    //   console.log('boardSection')
-    //   console.log(boardSection)
+      const boardSection = document.getElementById('board-section') as HTMLElement;
+      {
+          boardSection.style.display = 'table';
+          boardSection.style.width = '100%';
+          boardSection.style.borderCollapse = 'collapse';
+      }
+      console.log('boardSection')
+      console.log(boardSection)
 
-    //   const columnList = Array.from(document.getElementsByClassName('col') as HTMLCollectionOf<HTMLElement>);
+      const columnList = Array.from(document.getElementsByClassName('col') as HTMLCollectionOf<HTMLElement>);
     
-    //   columnList.forEach((col: HTMLElement) => {
-    //       col.style.display = 'table-cell';
-    //       col.style.overflow = 'hidden';
-    //       col.style.textOverflow = 'ellipsis';
-    //       col.style.whiteSpace = 'nowrap';
-    //   });
+      columnList.forEach((col: HTMLElement) => {
+          col.style.display = 'table-cell';
+          col.style.overflow = 'hidden';
+          col.style.textOverflow = 'ellipsis';
+          col.style.whiteSpace = 'nowrap';
+      });
 
-    //   const rowList = Array.from(document.getElementsByClassName('row') as HTMLCollectionOf<HTMLElement>);
+      const rowList = Array.from(document.getElementsByClassName('row') as HTMLCollectionOf<HTMLElement>);
     
-    //   rowList.forEach((row: HTMLElement) => {
-    //       row.style.display = 'table-row';
-    //   });
+      rowList.forEach((row: HTMLElement) => {
+          row.style.display = 'table-row';
+      });
   }
 })
 </script>
-
-<style>
-section {
-    display: table;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-section > * {
-    display: table-row;
-}
-
-section .col {
-    display: table-cell;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-</style>
