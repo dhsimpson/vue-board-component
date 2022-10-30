@@ -1,34 +1,32 @@
 <template>
-    <section :style="{
-        'display': 'table',
-        'width': '100%',
-        'border-collapse': 'collapse'
-    }">
+    <section style="
+        display: table;
+        width: 100%;
+        border-collapse: collapse;
+    ">
         <header
-        :style="{'display': 'table-row'}"
+        style="display: table-row"
          :class="[boardHead]">
-            <div
-            :style="{
-                'display': 'table-cell',
-                'overflow': 'hidden',
-                'text-overflow': 'ellipsis',
-                'white-space': 'nowrap',
-                'max-width': data.maxWidth as string
-            }"
+            <div style="
+                display: table-cell;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap
+            "
+            :style="{'max-width': data.maxWidth as string}"
              :class="['col', headerCol]" v-for="(data, idx) in columnList" :key="idx">
                 {{data.name}}
             </div>
         </header>
-        <div :style="{'display': 'table-row'}" 
+        <div style="display: table-row" 
         :class="['row', boardRow]" v-for="(data, idx) in boardList" :key="idx">
-            <div 
-            :style="{
-                'display': 'table-cell',
-                'overflow': 'hidden',
-                'text-overflow': 'ellipsis',
-                'white-space': 'nowrap',
-                'max-width': col.maxWidth as string
-            }"
+            <div style="
+                display: table-cell;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap
+            "
+            :style="{'max-width': col.maxWidth as string}"
             :class="['col', rowCol]" v-for="(col, col_idx) in columnList" :key="col_idx">
                 {{selectParam(data, col)}}
             </div>
