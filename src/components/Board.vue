@@ -1,12 +1,35 @@
 <template>
-    <section>
-        <header :class="[boardHead]">
-            <div :class="['col', headerCol]" :style="{'max-width': data.maxWidth as string}" v-for="(data, idx) in columnList" :key="idx">
+    <section :style="{
+        'display': 'table',
+        'width': '100%',
+        'border-collapse': 'collapse'
+    }">
+        <header
+        :style="{'display': 'table-row'}"
+         :class="[boardHead]">
+            <div
+            :style="{
+                'display': 'table-cell',
+                'overflow': 'hidden',
+                'text-overflow': 'ellipsis',
+                'white-space': 'nowrap',
+                'max-width': data.maxWidth as string
+            }"
+             :class="['col', headerCol]" v-for="(data, idx) in columnList" :key="idx">
                 {{data.name}}
             </div>
         </header>
-        <div :class="['row', boardRow]" v-for="(data, idx) in boardList" :key="idx">
-            <div :class="['col', rowCol]" :style="{'max-width': col.maxWidth as string}" v-for="(col, col_idx) in columnList" :key="col_idx">
+        <div :style="{'display': 'table-row'}" 
+        :class="['row', boardRow]" v-for="(data, idx) in boardList" :key="idx">
+            <div 
+            :style="{
+                'display': 'table-cell',
+                'overflow': 'hidden',
+                'text-overflow': 'ellipsis',
+                'white-space': 'nowrap',
+                'max-width': col.maxWidth as string
+            }"
+            :class="['col', rowCol]" v-for="(col, col_idx) in columnList" :key="col_idx">
                 {{selectParam(data, col)}}
             </div>
         </div>
@@ -38,7 +61,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style>
-@import '@/assets/board.css';
-</style>
