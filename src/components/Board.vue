@@ -39,21 +39,6 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-section {
-    display: table;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-section > * {
-    display: table-row;
-}
-
-section .col {
-    display: table-cell;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
+<style>
+@import '@/assets/board.css';
 </style>

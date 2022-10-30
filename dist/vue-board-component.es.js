@@ -1,5 +1,5 @@
 import { defineComponent, openBlock, createElementBlock, createElementVNode, normalizeClass, Fragment, renderList, normalizeStyle, toDisplayString } from "vue";
-var Board_vue_vue_type_style_index_0_scoped_true_lang = "";
+var Board_vue_vue_type_style_index_0_lang = "";
 var _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -58,7 +58,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }), 128))
   ]);
 }
-var Board = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-25cc41ca"]]);
+var Board = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
 var ViewerPlugin = {
   install: (app, options = { name: "" }) => {
     app.component(options.name || "board", Board);
