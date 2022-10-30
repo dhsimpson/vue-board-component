@@ -1,7 +1,7 @@
 {
   "name": "vue-board-component",
   "main": "src/index.js",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "author": "dhsimpson <qeadzc9503@naver.com>",
   "license": "MIT",
   "repository": {
