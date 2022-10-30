@@ -1,4 +1,5 @@
 import { defineComponent, openBlock, createElementBlock, createElementVNode, normalizeClass, Fragment, renderList, normalizeStyle, toDisplayString } from "vue";
+var Board_vue_vue_type_style_index_0_lang = "";
 var _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
