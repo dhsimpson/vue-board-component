@@ -27,7 +27,7 @@ export default defineConfig({
       entry: "./src/ViewerPlugin.ts",
       formats: ["es", "cjs"],
       name: "ViewerPlugin",
-      fileName: format => `vue-npm-library-example.${format}.js`
+      fileName: format => `vue-board-component.${format}.js`
     },
     rollupOptions: {
       external: ["vue"],

@@ -1,7 +1,6 @@
 {
   "name": "vue-board-component",
-  "main": "src/index.js",
-  "version": "0.2.6",
+  "version": "0.2.6-1",
   "author": "dhsimpson <qeadzc9503@naver.com>",
   "license": "MIT",
   "repository": {
@@ -15,6 +14,22 @@
     "build": "vite build && vue-tsc --emitDeclarationOnly",
     "lint": "vue-cli-service lint"
   },
+  "main": "./dist/vue-board-component.cjs.js",
+  "module": "./dist/vue-board-component.es.js",
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/vue-board-component.cjs.js",
+      "require": "./dist/vue-board-component.es.js"
+    }
+  },
+  "browser": {
+    ".": "./dist/vue-board-component.es.js"
+  },
+  "types": "./dist/ViewerPlugin.d.ts",
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
