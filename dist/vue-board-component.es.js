@@ -12,8 +12,6 @@ const _sfc_main = defineComponent({
     boardList: Array,
     columnList: Array,
     boardSection: String,
-    commonRow: String,
-    commonCol: String,
     boardHead: String,
     boardRow: String,
     headerCol: String,
@@ -30,9 +28,6 @@ const _sfc_main = defineComponent({
       return res;
     }
   },
-  setup() {
-    console.log("hello!!!");
-  },
   mounted() {
     const boardSection = document.getElementById("board-section");
     {
@@ -40,8 +35,6 @@ const _sfc_main = defineComponent({
       boardSection.style.width = "100%";
       boardSection.style.borderCollapse = "collapse";
     }
-    console.log("boardSection");
-    console.log(boardSection);
     const columnList = Array.from(document.getElementsByClassName("col"));
     columnList.forEach((col) => {
       col.style.display = "table-cell";
@@ -55,11 +48,9 @@ const _sfc_main = defineComponent({
     });
   }
 });
-const _hoisted_1 = ["id"];
-const _hoisted_2 = /* @__PURE__ */ createElementVNode("button", null, "click me@@@@", -1);
+const _hoisted_1 = { id: "board-section" };
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("section", { id: _ctx.boardSection }, [
-    _hoisted_2,
+  return openBlock(), createElementBlock("section", _hoisted_1, [
     createElementVNode("header", {
       class: normalizeClass(["row", _ctx.boardHead])
     }, [
@@ -85,7 +76,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         }), 128))
       ], 2);
     }), 128))
-  ], 8, _hoisted_1);
+  ]);
 }
 var Board = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
 var ViewerPlugin = {

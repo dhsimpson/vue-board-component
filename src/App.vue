@@ -78,21 +78,4 @@ export default defineComponent({
 .row-col {
     border-left: 1px solid blue;
 }
-
-#board-section {
-    display: table;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.common-row {
-    display: table-row;
-}
-
-.common-col {
-    display: table-cell;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
 </style>

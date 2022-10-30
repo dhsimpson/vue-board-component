@@ -1,6 +1,5 @@
 <template>
-    <section :id="boardSection">
-    <button>click me@@@@</button>
+    <section id="board-section">
         <header :class="['row', boardHead]">
             <div :class="['col', headerCol]" :style="{'max-width': data.maxWidth as string}" v-for="(data, idx) in columnList" :key="idx">
                 {{data.name}}
@@ -25,8 +24,6 @@ export default defineComponent({
     boardList: Array,
     columnList: Array as PropType<Array<Col>>,
     boardSection: String,
-    commonRow: String,
-    commonCol: String,
     boardHead: String,
     boardRow: String,
     headerCol: String,
@@ -40,9 +37,6 @@ export default defineComponent({
           return res;
       }
   },
-  setup() {
-      console.log('hello!!!')
-  },
   mounted() {
       const boardSection = document.getElementById('board-section') as HTMLElement;
       {
@@ -50,8 +44,6 @@ export default defineComponent({
           boardSection.style.width = '100%';
           boardSection.style.borderCollapse = 'collapse';
       }
-      console.log('boardSection')
-      console.log(boardSection)
 
       const columnList = Array.from(document.getElementsByClassName('col') as HTMLCollectionOf<HTMLElement>);
     
