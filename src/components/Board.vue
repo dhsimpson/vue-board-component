@@ -5,11 +5,11 @@
                 {{data.name}}
             </div>
         </header>
-        <div :class="['row', boardRow]" v-for="(data, idx) in boardList" :key="idx">
+        <a @click="$emit('goTo', $event, data)" href="javascript:void(0)" :class="['row', boardRow]" v-for="(data, idx) in boardList" :key="idx">
             <div :class="['col', rowCol]" :style="{'max-width': col.maxWidth as string}" v-for="(col, col_idx) in columnList" :key="col_idx">
                 {{selectParam(data, col)}}
             </div>
-        </div>
+        </a>
     </section>
 </template>
 
@@ -58,6 +58,8 @@ export default defineComponent({
     
       rowList.forEach((row: HTMLElement) => {
           row.style.display = 'table-row';
+          row.style.textDecoration = 'none';
+          row.style.color = 'black';
       });
   }
 })

@@ -7,6 +7,7 @@
         :headerCol="'header-col'" 
         :rowCol="'row-col'"
         :boardList="boardList" :columnList="columnList"
+        @goTo="goDetail"
         />
     </div>
 </template>
@@ -56,6 +57,12 @@ export default defineComponent({
           boardList,
           columnList
         }
+  },
+  methods: {
+      goDetail(event: any, data: any) {
+          console.log(event)
+          console.log(data)
+      }
   }
 })
 </script>
