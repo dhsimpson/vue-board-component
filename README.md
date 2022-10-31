@@ -27,7 +27,18 @@ app.use(board)
 
 ## Use Board Component
 
-   
+**You can use custom event when row clicked**
+```
+When you click 'row', it emits 'goTo' event with params '$event', 'data' (data is data of row)
+
+@click="$emit('goTo', $event, data)"
+
+Use this event like this : 
+@goTo="goDetail"
+
+(see example code below pls)
+```
+
 **You can use options for style**   
 
 
@@ -63,6 +74,7 @@ c.f.) You'd better to watch [boardList.json](/src/assets/boardList.json) with 'c
         :headerCol="'header-col'" 
         :rowCol="'row-col'"
         :boardList="boardList" :columnList="columnList"
+        @goTo="goDetail"
         />
     </div>
 </template>
@@ -112,6 +124,12 @@ export default defineComponent({
           boardList,
           columnList
         }
+  },
+  methods: {
+      goDetail(event: any, data: any) {
+          console.log(event)
+          console.log(data)
+      }
   }
 })
 </script>
