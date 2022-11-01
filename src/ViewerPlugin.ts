@@ -1,13 +1,15 @@
 import type {App} from 'vue';
-import { Board } from './components';
+import { Board, CardListBoard } from './components';
 
 interface ObjectWidthName {
-    name: string
+    boardName: string,
+    cardListBoardName: string
 }
 
 export default {
-    install: (app: App, options: ObjectWidthName = {name: ''}) => {
-        app.component(options.name || 'board', Board);
+    install: (app: App, options: ObjectWidthName = {boardName: '', cardListBoardName: ''}) => {
+        app.component(options.boardName || 'board', Board);
+        app.component(options.cardListBoardName || 'cardListBoard', CardListBoard);
     }
 }
 
